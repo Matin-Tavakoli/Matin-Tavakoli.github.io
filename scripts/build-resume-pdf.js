@@ -164,7 +164,7 @@ const contacts = [
   ["MAIL", "matin.tavakoli.dev@gmail.com"],
   ["WEB", "matin-tavakoli.github.io"],
   ["GITHUB", "github.com/Matin-Tavakoli"],
-  ["LINKEDIN", "linkedin.com/in/matin-tavakoli"],
+  ["LINKEDIN", "linkedin.com/in/matin-tavakoli-66a2a8322"],
 ];
 let cx = 126;
 let cy = 74;

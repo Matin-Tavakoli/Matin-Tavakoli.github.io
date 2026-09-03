@@ -1,12 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="MT">
   <rect width="64" height="64" rx="14" fill="#07090f"/>
   <rect x=".75" y=".75" width="62.5" height="62.5" rx="13.25" stroke="#6b93ff" stroke-opacity=".28"/>
-  <!-- M left stem + inner diagonal -->
   <path fill="#f3efe6" d="M12 50V16h9.2v20.4L32.4 16H42v10.2L31.6 42.6V50h-9.2v-7.4L12 50Z"/>
-  <!-- Shared T stem and bar -->
   <path fill="#efe9de" d="M42 16h14.6c2 0 3.4 1.6 3.4 3.4V26H50.4v24H42V16Z"/>
-  <!-- Fold shade where M meets T -->
   <path fill="#1a1d27" fill-opacity=".28" d="M42 26.2 32.4 16H42v10.2Z"/>
-  <!-- Cobalt notch under the T bar -->
   <rect x="48.8" y="26" width="11.2" height="3.4" rx=".6" fill="#3b6bff"/>
 </svg>

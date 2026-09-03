@@ -262,12 +262,28 @@ y = wrapRich(
 y += 8;
 
 y = heading(doc, "Experience", mx, y, mw);
-doc.font("sans-bold").fontSize(11).fillColor(C.ink).text("Backend Developer  ·  .NET / C#", mx, y, { width: mw - 92 });
+const moza = path.join(ROOT, "assets/projects/mozayedegar-pdf.jpg");
+clipRoundImage(doc, moza, mx, y - 1, 13, 3);
+doc.font("sans-bold").fontSize(11).fillColor(C.ink).text("Backend Developer  ·  .NET / C#", mx + 17, y, { width: mw - 110 });
 doc.font("mono").fontSize(7).fillColor(C.accent).text("Nov 2025 — Present", mx, y + 2, { width: mw, align: "right" });
 y += 15;
 doc.font("sans-semi").fontSize(8.2).fillColor(C.accent).text("Mozayedegar Co.", mx, y, { lineBreak: false });
 doc.font("sans").fillColor(C.muted).text("Tabriz, Iran", mx, y, { width: mw, align: "right" });
 y += 13;
+
+const chips = [
+  [path.join(ROOT, "assets/projects/karafan-pdf.jpg"), "Karafan"],
+  [path.join(ROOT, "assets/projects/mozayedegar-pdf.jpg"), "Mozayedegar"],
+];
+let chipX = mx;
+for (const [file, label] of chips) {
+  roundRect(doc, chipX, y, 62, 14, 4);
+  doc.fillColor("#e8e2d6").fill();
+  clipRoundImage(doc, file, chipX + 2, y + 2, 10, 2);
+  doc.font("sans-semi").fontSize(6.2).fillColor(C.ink).text(label, chipX + 14, y + 3.5);
+  chipX += 68;
+}
+y += 18;
 y = bullets(doc, [
   "**Karafan** (karafan.irantvto.ir): led the full server-side system for a nationwide National TVTO platform on .NET Core and Clean Architecture.",
   "Designed a multi-tiered **RBAC** engine for institutional and coaching permissions; built checkout and appointment services with physical **POS** and bank gateways.",
@@ -279,8 +295,11 @@ y += 6;
 
 y = heading(doc, "Ventures", mx, y, mw);
 
-function project(title, when, role, items, tagList) {
-  doc.font("sans-bold").fontSize(10).fillColor(C.ink).text(title, mx, y, { width: mw - 88 });
+function project(title, when, role, items, tagList, logoFile) {
+  if (logoFile) {
+    clipRoundImage(doc, logoFile, mx, y - 1, 14, 3.5);
+  }
+  doc.font("sans-bold").fontSize(10).fillColor(C.ink).text(title, mx + (logoFile ? 19 : 0), y, { width: mw - 108 });
   doc.font("mono").fontSize(7).fillColor(C.accent).text(when, mx, y + 1.5, { width: mw, align: "right" });
   y += 13;
   doc.font("sans-semi").fontSize(7.4).fillColor(C.muted).text(role, mx, y);
@@ -288,6 +307,8 @@ function project(title, when, role, items, tagList) {
   y = bullets(doc, items, mx, y, mw);
   y = tags(doc, tagList, mx, y + 1) + 6;
 }
+
+const P = (name) => path.join(ROOT, "assets/projects", name);
 
 project(
   "Konkur Plus — konkurplus.com",
@@ -297,7 +318,8 @@ project(
     "Modular monolith in .NET (schema-per-module PostgreSQL, MediatR, JWT) with isolated Identity, Learning, AI, Orders, and Support domains.",
     "React Native / Expo app: study timers, planners, exam engines, Cafe Bazaar & Myket IAP, plus LLM agents and Redis leaderboards.",
   ],
-  ["Modular Monolith", ".NET", "React Native", "LLM", "IAP"]
+  ["Modular Monolith", ".NET", "React Native", "LLM", "IAP"],
+  P("konkurplus-pdf.jpg")
 );
 
 project(
@@ -308,7 +330,8 @@ project(
     "Figma design system for contractor finance: projects, units, sales, installments, cheques, counterparties.",
     "Persian RTL client in React + Vite + Tailwind (shadcn/ui) — dense desktop workspace, not a marketing site.",
   ],
-  ["Figma", "React", "Tailwind", "RTL / FA"]
+  ["Figma", "React", "Tailwind", "RTL / FA"],
+  P("golabi-pdf.jpg")
 );
 
 project(
@@ -318,7 +341,8 @@ project(
   [
     "Multi-tier stock flow from suppliers and drivers through warehouse tracking and retail POS; N-Tier C# /.NET backend for adjustments, audit logs, and P&L.",
   ],
-  ["N-Tier", "C# .NET", "React"]
+  ["N-Tier", "C# .NET", "React"],
+  P("sellura-pdf.jpg")
 );
 
 // footer

@@ -451,6 +451,57 @@ section {
   margin: 8px 0 4px;
   font-size: 22px;
   letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.co-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.shipped {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.shipped a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 6px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+
+.shipped a:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.shipped img {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #0a0c12;
+}
+
+.shipped img.pad {
+  object-fit: contain;
+  padding: 3px;
+  background: #f4f1ea;
 }
 
 .job-meta p {
@@ -489,7 +540,7 @@ section {
 
 .card {
   display: grid;
-  grid-template-columns: 92px 1fr;
+  grid-template-columns: 76px 1fr;
   gap: 8px 22px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%), var(--bg-card);
   border: 1px solid var(--line);
@@ -503,11 +554,20 @@ section {
   border-color: rgba(107, 147, 255, 0.45);
 }
 
-.num {
-  font-family: var(--serif);
-  font-size: 34px;
-  color: var(--accent-2);
-  line-height: 1;
+.brand-mark {
+  width: 76px;
+  height: 76px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #080a10;
+  border: 1px solid var(--line);
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-top {
@@ -658,7 +718,6 @@ footer {
   .skill-grid,
   .job,
   .split,
-  .card,
   .hero-grid {
     grid-template-columns: 1fr;
   }

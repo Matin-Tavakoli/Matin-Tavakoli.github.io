@@ -4,4 +4,6 @@ Live: [matin-tavakoli.github.io](https://matin-tavakoli.github.io)
 
 Software engineer resume and portfolio. Static HTML/CSS/JS, hosted on GitHub Pages.
 
-Print the page for a one-page PDF resume (`Ctrl/Cmd + P`).
+Download the designed one-page PDF from the site header, or directly:
+[Matin-Tavakoli-Resume.pdf](https://matin-tavakoli.github.io/Matin-Tavakoli-Resume.pdf)
+

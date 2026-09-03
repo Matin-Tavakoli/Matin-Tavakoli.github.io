@@ -10,8 +10,6 @@ navLinks?.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => navLinks.classList.remove("open"));
 });
 
-document.getElementById("print-btn")?.addEventListener("click", () => window.print());
-
 const year = document.getElementById("year");
 if (year) year.textContent = String(new Date().getFullYear());
 

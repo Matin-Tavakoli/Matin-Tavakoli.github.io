@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Matin Tavakoli — Resume</title>
+  <style>
+    @font-face {
+      font-family: "Plus Jakarta Sans";
+      src: url("./assets/fonts/PlusJakartaSans-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Plus Jakarta Sans";
+      src: url("./assets/fonts/PlusJakartaSans-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Plus Jakarta Sans";
+      src: url("./assets/fonts/PlusJakartaSans-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Plus Jakarta Sans";
+      src: url("./assets/fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Instrument Serif";
+      src: url("./assets/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Instrument Serif";
+      src: url("./assets/fonts/InstrumentSerif-Italic.ttf") format("truetype");
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: "IBM Plex Mono";
+      src: url("./assets/fonts/IBMPlexMono-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+    }
+    @page { size: A4; margin: 0; }
+    @media screen {
+      html { zoom: 2; }
+    }
+    * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #171a21;
+      font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+    }
+    .sheet {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: #f6f2ea;
+      position: relative;
+    }
+    .sheet::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: #3b6bff;
+    }
+
+    /* HEADER */
+    .mast {
+      background: #07090f;
+      color: #f3efe6;
+      padding: 15mm 12mm 13mm 14mm;
+      display: grid;
+      grid-template-columns: 32mm 1fr 22mm;
+      gap: 8mm;
+      align-items: center;
+      position: relative;
+    }
+    .mast::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, #3b6bff, #8fd6b2 55%, #f3efe6);
+    }
+    .photo-wrap {
+      position: relative;
+      width: 32mm;
+      height: 32mm;
+    }
+    .photo-wrap img.photo {
+      width: 32mm;
+      height: 32mm;
+      object-fit: cover;
+      object-position: center 18%;
+      border-radius: 8mm;
+      border: 1.5px solid rgba(243,239,230,.22);
+    }
+    .identity h1 {
+      margin: 0;
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 28pt;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+    }
+    .identity h1 em {
+      font-style: italic;
+      color: #9ec0ff;
+    }
+    .role {
+      margin: 3.5mm 0 3mm;
+      color: #6b93ff;
+      font-weight: 700;
+      font-size: 9.2pt;
+      letter-spacing: 0.01em;
+    }
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6mm 5mm;
+      color: #c8cdd8;
+      font-size: 7.4pt;
+      font-weight: 500;
+    }
+    .contacts span { white-space: nowrap; }
+    .contacts b { color: #8b93a7; font-weight: 600; margin-right: 1.4mm; font-size: 6.4pt; letter-spacing: .08em; text-transform: uppercase; }
+    .mark {
+      width: 18mm;
+      height: 18mm;
+      border-radius: 5mm;
+      object-fit: cover;
+      justify-self: end;
+      border: 1px solid rgba(107,147,255,.35);
+    }
+
+    /* BODY */
+    .body {
+      display: grid;
+      grid-template-columns: 58mm 1fr;
+      min-height: calc(297mm - 60mm);
+    }
+    .rail {
+      background: #efe9dd;
+      padding: 7mm 6mm 10mm 12mm;
+      border-right: 1px solid #e0d8c8;
+    }
+    .main {
+      padding: 7mm 11mm 10mm 8mm;
+    }
+    .h {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      margin: 0 0 3.2mm;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 6.6pt;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #3b6bff;
+    }
+    .h::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #d9d0bf;
+    }
+    .block { margin-bottom: 5.4mm; }
+    .summary {
+      font-size: 7.7pt;
+      line-height: 1.42;
+      color: #2b3140;
+      text-align: justify;
+      margin: 0;
+    }
+    .summary strong { color: #111318; }
+
+    .skill {
+      margin-bottom: 3.4mm;
+    }
+    .skill b {
+      display: block;
+      font-size: 7.4pt;
+      margin-bottom: 0.8mm;
+      color: #111318;
+    }
+    .skill p {
+      margin: 0;
+      font-size: 6.9pt;
+      line-height: 1.38;
+      color: #3a4254;
+    }
+
+    .edu b, .lang b { font-size: 8pt; display: block; color: #111318; }
+    .edu span, .lang p { display: block; font-size: 7pt; color: #4a5263; line-height: 1.35; margin-top: 0.6mm; }
+    .lang p { margin: 0.4mm 0 0; }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm;
+    }
+    .job-head h2 {
+      margin: 0;
+      font-size: 10.2pt;
+      letter-spacing: -0.03em;
+    }
+    .when {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 6.6pt;
+      color: #3b6bff;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .co {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.6pt;
+      color: #4a5263;
+      font-weight: 600;
+      margin: 0.6mm 0 1.6mm;
+    }
+    .co em { color: #2f5de0; font-style: normal; }
+    ul {
+      margin: 0;
+      padding-left: 3.6mm;
+    }
+    li {
+      font-size: 7.35pt;
+      line-height: 1.36;
+      color: #2c3342;
+      margin-bottom: 1.15mm;
+    }
+    li strong { color: #111318; }
+    a { color: #2f5de0; text-decoration: none; }
+
+    .proj {
+      margin-bottom: 3.4mm;
+      padding-bottom: 3mm;
+      border-bottom: 1px solid #e2dacb;
+    }
+    .proj:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+    .proj-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 3mm;
+    }
+    .proj h3 {
+      margin: 0;
+      font-size: 9.2pt;
+      letter-spacing: -0.02em;
+    }
+    .proj .role {
+      margin: 0.4mm 0 1.2mm;
+      color: #5a6273;
+      font-size: 7pt;
+      font-weight: 600;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 1.1mm; margin-top: 1.4mm; }
+    .tag {
+      font-size: 5.8pt;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #2f5de0;
+      background: #e4ebff;
+      border-radius: 3px;
+      padding: 0.7mm 1.6mm;
+    }
+
+    .foot {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 9mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12mm 0 14mm;
+      background: #07090f;
+      color: #8b93a7;
+      font-size: 6.4pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .foot b { color: #f3efe6; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <header class="mast">
+      <div class="photo-wrap">
+        <img class="photo" src="./assets/photo.jpg" alt="Matin Tavakoli">
+      </div>
+      <div class="identity">
+        <h1>Matin <em>Tavakoli</em></h1>
+        <div class="role">Software Engineer · Backend Developer (.NET / C#)</div>
+        <div class="contacts">
+          <span><b>Where</b> Tabriz, Iran</span>
+          <span><b>Phone</b> +98 914 321 5274</span>
+          <span><b>Mail</b> matin.tavakoli.dev@gmail.com</span>
+          <span><b>Web</b> matin-tavakoli.github.io</span>
+          <span><b>GitHub</b> github.com/Matin-Tavakoli</span>
+          <span><b>LinkedIn</b> linkedin.com/in/matin-tavakoli</span>
+        </div>
+      </div>
+      <img class="mark" src="./assets/logo-mark.png" alt="MT">
+    </header>
+
+    <div class="body">
+      <aside class="rail">
+        <div class="block">
+          <div class="h">Expertise</div>
+          <div class="skill"><b>Backend</b><p>C#, .NET / ASP.NET Core, Web API, EF Core, LINQ, Minimal APIs</p></div>
+          <div class="skill"><b>Architecture</b><p>Clean Architecture, Modular Monolith, DDD, CQRS / MediatR, N-Tier, SOLID</p></div>
+          <div class="skill"><b>Data</b><p>PostgreSQL (indexing, query plans), SQL Server, Redis, MongoDB</p></div>
+          <div class="skill"><b>Quality</b><p>Hangfire, Hosted Services, xUnit, Swagger / Postman</p></div>
+          <div class="skill"><b>Security</b><p>JWT, granular RBAC, payment gateways, POS terminals, IAP</p></div>
+          <div class="skill"><b>Product</b><p>React, React Native / Expo, Tailwind, Figma, Docker, GitHub</p></div>
+        </div>
+        <div class="block edu">
+          <div class="h">Education</div>
+          <b>University of Tabriz</b>
+          <span>B.Sc. Computer Engineering</span>
+          <span>Sep 2024 — Exp. Jun 2028</span>
+          <span>Data Structures, Algorithms, Databases, Software Engineering, OS</span>
+        </div>
+        <div class="block lang">
+          <div class="h">Languages</div>
+          <p><b>Persian</b> — Native</p>
+          <p><b>English</b> — Professional working (technical R/W)</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="block">
+          <div class="h">Summary</div>
+          <p class="summary">
+            Results-driven software engineer in the <strong>C# / .NET</strong> ecosystem, shipping maintainable architectures, high-throughput APIs, and enterprise systems. Proven with <strong>Clean Architecture</strong>, <strong>Modular Monolith</strong>, and <strong>DDD</strong>. Strong on PostgreSQL &amp; SQL Server design, Redis caching, and Hangfire background work — backend-first, with full-stack range in React, React Native, and Figma.
+          </p>
+        </div>
+
+        <div class="block">
+          <div class="h">Experience</div>
+          <div class="job-head">
+            <h2>Backend Developer · .NET / C#</h2>
+            <span class="when">Nov 2025 — Present</span>
+          </div>
+          <div class="co"><em>Mozayedegar Co.</em><span>Tabriz, Iran</span></div>
+          <ul>
+            <li><strong>Karafan</strong> (karafan.irantvto.ir): led the full server-side system for a nationwide National TVTO platform on .NET Core and Clean Architecture.</li>
+            <li>Designed a multi-tiered <strong>RBAC</strong> engine for institutional and coaching permissions; built checkout and appointment services with physical <strong>POS</strong> and bank gateways.</li>
+            <li>Tuned PostgreSQL plans/indexes and layered <strong>Redis</strong> to cut latency on heavy reporting endpoints; backed transactions with <strong>xUnit</strong> and functional tests.</li>
+            <li><strong>Tickcar &amp; Ticktruck</strong>: procurement/inspection modules with DDD bounded contexts; offloaded PDFs and schedules to <strong>Hangfire</strong>.</li>
+            <li><strong>Mozayedegar</strong> (mozayedegar.ir): REST APIs with CQRS via MediatR, isolating command and query pipelines.</li>
+          </ul>
+        </div>
+
+        <div class="block" style="margin-bottom:0">
+          <div class="h">Ventures</div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <h3>Konkur Plus — konkurplus.com</h3>
+              <span class="when">2025 — Present</span>
+            </div>
+            <div class="role">Co-Founder &amp; Full-Stack Engineer · EdTech</div>
+            <ul>
+              <li>Modular monolith in .NET (schema-per-module PostgreSQL, MediatR, JWT) with isolated Identity, Learning, AI, Orders, and Support domains.</li>
+              <li>React Native / Expo app: study timers, planners, exam engines, Cafe Bazaar &amp; Myket IAP, plus LLM agents and Redis leaderboards.</li>
+            </ul>
+            <div class="tags"><span class="tag">Modular Monolith</span><span class="tag">.NET</span><span class="tag">React Native</span><span class="tag">LLM</span><span class="tag">IAP</span></div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <h3>Golabi — Construction accounting</h3>
+              <span class="when">2025 — Present</span>
+            </div>
+            <div class="role">Co-Founder &amp; Product Designer · RTL desktop product</div>
+            <ul>
+              <li>Figma design system for contractor finance: projects, units, sales, installments, cheques, counterparties.</li>
+              <li>Persian RTL client in React + Vite + Tailwind (shadcn/ui) — dense desktop workspace, not a marketing site.</li>
+            </ul>
+            <div class="tags"><span class="tag">Figma</span><span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">RTL / FA</span></div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-top">
+              <h3>Sellura — Inventory &amp; supply chain</h3>
+              <span class="when">2025</span>
+            </div>
+            <div class="role">Product Designer &amp; Full-Stack Developer</div>
+            <ul>
+              <li>Multi-tier stock flow from suppliers and drivers through warehouse tracking and retail POS; N-Tier C# /.NET backend for adjustments, audit logs, and P&amp;L.</li>
+            </ul>
+            <div class="tags"><span class="tag">N-Tier</span><span class="tag">C# .NET</span><span class="tag">React</span></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="foot">
+      <span><b>Matin Tavakoli</b> · Software Engineer</span>
+      <span>matin-tavakoli.github.io</span>
+    </footer>
+  </div>
+</body>
+</html>

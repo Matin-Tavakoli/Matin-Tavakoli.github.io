@@ -295,13 +295,22 @@ y += 6;
 
 y = heading(doc, "Ventures", mx, y, mw);
 
-function project(title, when, role, items, tagList, logoFile) {
+function project(title, when, role, items, tagList, logoFile, flagship) {
   if (logoFile) {
     clipRoundImage(doc, logoFile, mx, y - 1, 14, 3.5);
   }
   doc.font("sans-bold").fontSize(10).fillColor(C.ink).text(title, mx + (logoFile ? 19 : 0), y, { width: mw - 108 });
   doc.font("mono").fontSize(7).fillColor(C.accent).text(when, mx, y + 1.5, { width: mw, align: "right" });
   y += 13;
+  if (flagship) {
+    doc.font("sans-bold").fontSize(6).fillColor(C.accent);
+    const label = "★ FLAGSHIP VENTURE";
+    const bw = doc.widthOfString(label, { characterSpacing: 0.5 }) + 10;
+    roundRect(doc, mx, y, bw, 10.5, 5.25);
+    doc.fillColor(C.chip).fill();
+    doc.fillColor(C.accent).text(label, mx + 5, y + 2.4, { lineBreak: false, characterSpacing: 0.5 });
+    y += 14;
+  }
   doc.font("sans-semi").fontSize(7.4).fillColor(C.muted).text(role, mx, y);
   y += 12;
   y = bullets(doc, items, mx, y, mw);
@@ -319,7 +328,8 @@ project(
     "React Native / Expo app: study timers, planners, exam engines, Cafe Bazaar & Myket IAP, plus LLM agents and Redis leaderboards.",
   ],
   ["Modular Monolith", ".NET", "React Native", "LLM", "IAP"],
-  P("konkurplus-pdf.jpg")
+  P("konkurplus-pdf.jpg"),
+  true
 );
 
 project(

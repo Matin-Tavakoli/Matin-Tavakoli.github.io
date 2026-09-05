@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=3">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -110,6 +110,9 @@
         </div>
         <div class="skill-grid">
           <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r=".6" fill="currentColor" stroke="none"/><circle cx="7" cy="17" r=".6" fill="currentColor" stroke="none"/></svg>
+            </div>
             <h3>Backend &amp; frameworks</h3>
             <div class="chips">
               <span class="chip">C#</span>
@@ -121,6 +124,9 @@
             </div>
           </article>
           <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.2"/><rect x="13" y="4" width="7" height="7" rx="1.2"/><rect x="4" y="13" width="7" height="7" rx="1.2"/><rect x="13" y="13" width="7" height="7" rx="1.2"/></svg>
+            </div>
             <h3>Architecture</h3>
             <div class="chips">
               <span class="chip">Clean Architecture</span>
@@ -132,6 +138,9 @@
             </div>
           </article>
           <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+            </div>
             <h3>Data &amp; caching</h3>
             <div class="chips">
               <span class="chip">PostgreSQL</span>
@@ -142,6 +151,9 @@
             </div>
           </article>
           <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="8" y="8" width="8" height="8" rx="1.2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+            </div>
             <h3>Concurrency &amp; quality</h3>
             <div class="chips">
               <span class="chip">Hangfire</span>
@@ -151,6 +163,9 @@
             </div>
           </article>
           <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7 3.2v5.4c0 4.6-3 7.6-7 9.2-4-1.6-7-4.6-7-9.2V6.2L12 3Z"/><path d="M9.2 12.2l2 2 3.6-4"/></svg>
+            </div>
             <h3>Integrations &amp; security</h3>
             <div class="chips">
               <span class="chip">POS terminals</span>
@@ -162,6 +177,9 @@
             </div>
           </article>
           <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
+            </div>
             <h3>Product surface</h3>
             <div class="chips">
               <span class="chip">React</span>
@@ -223,7 +241,7 @@
           <span class="idx">04 / Selected</span>
         </div>
         <div class="projects">
-          <article class="card">
+          <article class="card featured">
             <div class="brand-mark">
               <img src="./assets/projects/konkurplus-mark.png" width="76" height="76" alt="Konkur Plus logo">
             </div>
@@ -232,6 +250,7 @@
                 <h3>Konkur Plus — <a href="https://konkurplus.com" target="_blank" rel="noreferrer">konkurplus.com</a></h3>
                 <span class="when-sm">2025 — Present</span>
               </div>
+              <span class="flagship">Flagship venture</span>
               <p class="role">Co-Founder &amp; Full-Stack Engineer · EdTech ecosystem</p>
               <ul>
                 <li>Architected a decoupled <strong>modular monolith</strong> in .NET (schema-per-module PostgreSQL, MediatR, JWT) with isolated domains for Identity, Learning, AI, Orders, and Support — ready for later extraction.</li>
@@ -314,11 +333,26 @@
             <h3>Let’s talk</h3>
             <p>Backend roles, architecture reviews, or a product that needs a serious API.</p>
             <div class="contact-list">
-              <a href="mailto:matin.tavakoli.dev@gmail.com"><span>Email</span><small>matin.tavakoli.dev@gmail.com</small></a>
-              <a href="https://github.com/Matin-Tavakoli/" target="_blank" rel="noreferrer"><span>GitHub</span><small>github.com/Matin-Tavakoli</small></a>
-              <a href="https://www.linkedin.com/in/matin-tavakoli-66a2a8322" target="_blank" rel="noreferrer"><span>LinkedIn</span><small>linkedin.com/in/matin-tavakoli-66a2a8322</small></a>
-              <span><span>Phone</span><small>+98 914 321 5274</small></span>
-              <span><span>Location</span><small>Tabriz, Iran</small></span>
+              <a href="mailto:matin.tavakoli.dev@gmail.com">
+                <span><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 6.5l8 6 8-6"/></svg></span>Email</span>
+                <small>matin.tavakoli.dev@gmail.com</small>
+              </a>
+              <a href="https://github.com/Matin-Tavakoli/" target="_blank" rel="noreferrer">
+                <span><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .26.18.57.69.48A10 10 0 0 0 12 2Z"/></svg></span>GitHub</span>
+                <small>github.com/Matin-Tavakoli</small>
+              </a>
+              <a href="https://www.linkedin.com/in/matin-tavakoli-66a2a8322" target="_blank" rel="noreferrer">
+                <span><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M7.5 10.5v6M7.5 7.75v.01M12 16.5v-3.75c0-1.24.9-2 2-2s2 .76 2 2v3.75M12 12.75v3.75"/></svg></span>LinkedIn</span>
+                <small>linkedin.com/in/matin-tavakoli-66a2a8322</small>
+              </a>
+              <span>
+                <span><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5c0-1 1-1 1-1h3l2 5-2 1.5c1 2.5 3 4.5 5.5 5.5L15 14l5 2s0 1-1 1c-1 4-13 1-15-9C4 6 4 5 4 5Z"/></svg></span>Phone</span>
+                <small>+98 914 321 5274</small>
+              </span>
+              <span>
+                <span><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.2a7 7 0 1 1 14 0C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.8" r="2.4"/></svg></span>Location</span>
+                <small>Tabriz, Iran</small>
+              </span>
             </div>
           </article>
         </div>
@@ -332,6 +366,6 @@
       <span>Designed resume · Download the PDF from the header</span>
     </div>
   </footer>
-  <script src="./app.js"></script>
+  <script src="./app.js?v=3"></script>
 </body>
 </html>

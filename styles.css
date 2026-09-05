@@ -747,8 +747,8 @@ section {
   margin-top: 16px;
 }
 
-.contact-list a,
-.contact-list span {
+.contact-list > a,
+.contact-list > span {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -759,36 +759,35 @@ section {
   transition: color 0.2s ease;
 }
 
-.contact-list a:hover {
+.contact-list > a:hover {
   color: var(--accent-2);
 }
 
-.contact-list a > span:first-child,
-.contact-list span > span:first-child {
+.contact-list .label {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 .contact-list .ico {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   border-radius: 8px;
   background: var(--accent-dim);
   color: var(--accent-2);
-  flex: 0 0 auto;
+  flex: 0 0 28px;
+  line-height: 0;
 }
 
 .contact-list .ico svg {
-  width: 14px;
-  height: 14px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  display: block;
+  width: 15px;
+  height: 15px;
+  flex: none;
 }
 
 .contact-list small {

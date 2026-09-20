@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const PDFDocument = require("/tmp/node_modules/pdfkit/js/pdfkit.js");
+const PDFDocument = require("pdfkit");
 
 const ROOT = path.resolve(__dirname, "..");
 const FONT = path.join(ROOT, "assets/fonts");
@@ -237,7 +237,7 @@ y = heading(doc, "Now shipping", rx, y, rw);
 roundRect(doc, rx, y, rw, 78, 8);
 doc.fillColor(C.dark).fill();
 doc.font("sans-bold").fontSize(7.6).fillColor(C.cream).text("Live product surfaces", rx + 8, y + 9);
-const live = ["konkurplus.com", "karafan.irantvto.ir", "mozayedegar.ir", "matin-tavakoli.github.io"];
+const live = ["konkurplus.com", "karafan.irantvto.ir", "mozayedegar.com", "matin-tavakoli.github.io"];
 live.forEach((u, i) => {
   doc.fillColor(C.accentSoft).circle(rx + 12, y + 28 + i * 11, 1.2).fill();
   doc.fillColor("#d7dce8").font("sans").fontSize(7).text(u, rx + 18, y + 23.5 + i * 11);
@@ -274,6 +274,7 @@ y += 13;
 const chips = [
   [path.join(ROOT, "assets/projects/karafan-pdf.jpg"), "Karafan"],
   [path.join(ROOT, "assets/projects/mozayedegar-pdf.jpg"), "Mozayedegar"],
+  [path.join(ROOT, "assets/projects/mozayedegar-pdf.jpg"), "Olympiad"],
 ];
 let chipX = mx;
 for (const [file, label] of chips) {
@@ -289,7 +290,8 @@ y = bullets(doc, [
   "Designed a multi-tiered **RBAC** engine for institutional and coaching permissions; built checkout and appointment services with physical **POS** and bank gateways.",
   "Tuned PostgreSQL plans/indexes and layered **Redis** to cut latency on heavy reporting endpoints; backed transactions with **xUnit** and functional tests.",
   "**Tickcar & Ticktruck**: procurement/inspection modules with DDD bounded contexts; offloaded PDFs and schedules to **Hangfire**.",
-  "**Mozayedegar** (mozayedegar.ir): REST APIs with CQRS via MediatR, isolating command and query pipelines.",
+  "**Mozayedegar** (mozayedegar.com): REST APIs with CQRS via MediatR, isolating command and query pipelines.",
+  "**Olympiad** (olympiad.irantvto.ir): worked full-stack, owning both the .NET backend and front-end delivery.",
 ], mx, y, mw);
 y += 6;
 
@@ -323,14 +325,15 @@ project(
 );
 
 project(
-  "Golabi — Construction accounting",
+  "Golabi — golabi.app",
   "2025 — Present",
   "Co-Founder & Product Designer  ·  RTL desktop product",
   [
     "Figma design system for contractor finance: projects, units, sales, installments, cheques, counterparties.",
     "Persian RTL client in React + Vite + Tailwind (shadcn/ui) — dense desktop workspace, not a marketing site.",
+    "Deployed and maintain the app on a Linux server, owning the release pipeline end-to-end.",
   ],
-  ["Figma", "React", "Tailwind", "RTL / FA"],
+  ["Figma", "React", "Tailwind", "RTL / FA", "Linux Deploy"],
   P("golabi-pdf.jpg")
 );
 

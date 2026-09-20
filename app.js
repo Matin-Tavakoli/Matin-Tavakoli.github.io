@@ -29,3 +29,41 @@ const spy = () => {
 
 window.addEventListener("scroll", spy, { passive: true });
 spy();
+
+// Scroll-triggered reveal (replaces load-only animation for below-the-fold content)
+const revealTargets = document.querySelectorAll(
+  ".section-head, .prose, .skill-card, .job, .card, .panel, .meta"
+);
+
+if ("IntersectionObserver" in window) {
+  revealTargets.forEach((el) => el.classList.add("reveal-io"));
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  revealTargets.forEach((el, i) => {
+    el.style.transitionDelay = `${Math.min(i % 4, 3) * 70}ms`;
+    io.observe(el);
+  });
+} else {
+  revealTargets.forEach((el) => el.classList.add("in-view"));
+}
+
+// Magnetic hover glow on cards — follows cursor for a subtle spotlight effect
+const glowEls = document.querySelectorAll(".card, .skill-card, .panel, .job");
+glowEls.forEach((el) => {
+  el.addEventListener("pointermove", (e) => {
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+    el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+  });
+});

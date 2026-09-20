@@ -322,7 +322,7 @@ const P = (name) => path.join(ROOT, "assets/projects", name);
 project(
   "Konkur Plus — konkurplus.com",
   "2025 — Present",
-  "Co-Founder, UI/UX Designer & Full-Stack Engineer  ·  EdTech",
+  "Co-Founder, Product Designer & Full-Stack Engineer  ·  EdTech",
   [
     "Designed the full UI/UX in Figma for the web and mobile experience: student dashboards, study planners, and exam flows.",
     "Modular monolith in .NET (schema-per-module PostgreSQL, MediatR, JWT) with isolated Identity, Learning, AI, Orders, and Support domains.",
@@ -336,7 +336,7 @@ project(
 project(
   "Golabi — golabi.app",
   "2025 — Present",
-  "Co-Founder & UI/UX Designer  ·  RTL desktop product",
+  "Co-Founder & Product Designer  ·  RTL desktop product",
   [
     "Figma design system for contractor finance: projects, units, sales, installments, cheques, counterparties.",
     "Persian RTL client in React + Vite + Tailwind (shadcn/ui) — dense desktop workspace, not a marketing site.",
@@ -349,7 +349,7 @@ project(
 project(
   "Sellura — Inventory & supply chain",
   "2025",
-  "UI/UX Designer & Full-Stack Developer",
+  "Product Designer & Full-Stack Developer",
   [
     "Designed the UI/UX for the entire supply-chain and POS workflow in Figma before building it.",
     "Multi-tier stock flow from suppliers and drivers through warehouse tracking and retail POS; N-Tier C# /.NET backend for adjustments, audit logs, and P&L.",

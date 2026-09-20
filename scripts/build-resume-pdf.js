@@ -361,9 +361,9 @@ project(
   "2025 — Present",
   "Full-Stack Developer  ·  National TVTO platform",
   [
-    "Worked full-stack, owning both the .NET backend and front-end delivery for a nationwide skills-olympiad registration platform.",
+    "Worked full-stack, owning both the .NET backend and the Next.js / React front-end for a nationwide skills-olympiad registration platform.",
   ],
-  [".NET", "Full-Stack"],
+  [".NET", "Next.js", "React", "Full-Stack"],
   P("olympiad-pdf.jpg")
 );
 

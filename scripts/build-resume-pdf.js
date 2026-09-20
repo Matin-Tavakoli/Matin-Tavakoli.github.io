@@ -274,7 +274,6 @@ y += 13;
 const chips = [
   [path.join(ROOT, "assets/projects/karafan-pdf.jpg"), "Karafan"],
   [path.join(ROOT, "assets/projects/mozayedegar-pdf.jpg"), "Mozayedegar"],
-  [path.join(ROOT, "assets/projects/mozayedegar-pdf.jpg"), "Olympiad"],
 ];
 let chipX = mx;
 for (const [file, label] of chips) {
@@ -291,7 +290,6 @@ y = bullets(doc, [
   "Tuned PostgreSQL plans/indexes and layered **Redis** to cut latency on heavy reporting endpoints; backed transactions with **xUnit** and functional tests.",
   "**Tickcar & Ticktruck**: procurement/inspection modules with DDD bounded contexts; offloaded PDFs and schedules to **Hangfire**.",
   "**Mozayedegar** (mozayedegar.com): REST APIs with CQRS via MediatR, isolating command and query pipelines.",
-  "**Olympiad** (olympiad.irantvto.ir): worked full-stack, owning both the .NET backend and front-end delivery.",
 ], mx, y, mw);
 y += 6;
 
@@ -356,6 +354,17 @@ project(
   ],
   ["N-Tier", "C# .NET", "React"],
   P("sellura-pdf.jpg")
+);
+
+project(
+  "Olympiad — olympiad.irantvto.ir",
+  "2025 — Present",
+  "Full-Stack Developer  ·  National TVTO platform",
+  [
+    "Worked full-stack, owning both the .NET backend and front-end delivery for a nationwide skills-olympiad registration platform.",
+  ],
+  [".NET", "Full-Stack"],
+  P("olympiad-pdf.jpg")
 );
 
 // footer
